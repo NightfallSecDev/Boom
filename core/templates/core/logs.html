@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<header>
+    <h1>Execution Logs</h1>
+</header>
+<div class="glass-card" style="animation-delay: 0.1s">
+    <table>
+        <thead>
+            <tr>
+                <th>Agent</th>
+                <th>Stdout Stream</th>
+                <th>Stderr Exception</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td style="font-weight: 600; font-size: 0.95rem;">
+                    {{ log.task.target_client.name }}
+                    <div style="font-family: ui-monospace, monospace; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Task: {{ log.task.id|truncatechars:12 }}</div>
+                </td>
+                <td>
+                    <pre style="max-width: 400px; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.5); padding: 0.75rem; border-radius: 8px; font-size: 0.8rem; color: var(--success); margin: 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);">{{ log.output|default:"(No execution output registered)" }}</pre>
+                </td>
+                <td>
+                    {% if log.error %}
+                    <pre style="max-width: 250px; white-space: pre-wrap; word-break: break-all; background: rgba(244,63,94,0.1); border: 1px solid rgba(244,63,94,0.2); color: var(--danger); padding: 0.75rem; border-radius: 8px; font-size: 0.8rem; margin: 0;">{{ log.error }}</pre>
+                    {% else %}
+                    <span style="color: var(--text-muted); font-style: italic; font-size: 0.85rem;">Clean Exit</span>
+                    {% endif %}
+                </td>
+                <td style="color: var(--text-muted); font-size: 0.8rem; font-weight: 500;">{{ log.executed_at|date:"M d, Y h:i A" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 3rem;">No telemetry data recorded in the persistent log index.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

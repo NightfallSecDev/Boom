@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<header>
+    <h1>Dashboard Overview</h1>
+</header>
+<div class="grid grid-cols-3">
+    <div class="glass-card" style="animation-delay: 0.1s">
+        <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600;">Registered Agents</div>
+        <div style="font-size: 3.5rem; font-weight: 700; color: var(--text-main); line-height: 1;">{{ total_clients }}</div>
+    </div>
+    <div class="glass-card" style="border-top: 2px solid var(--success); animation-delay: 0.2s">
+        <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px; color: var(--success); margin-bottom: 0.5rem; font-weight: 600;">Online Status</div>
+        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <div style="font-size: 3.5rem; font-weight: 700; color: var(--text-main); line-height: 1;">{{ online_clients }}</div>
+            <span style="color: var(--text-muted); font-size: 1rem; font-weight: 500;">active instances</span>
+        </div>
+    </div>
+    <div class="glass-card" style="border-top: 2px solid #818cf8; animation-delay: 0.3s">
+        <div style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px; color: #818cf8; margin-bottom: 0.5rem; font-weight: 600;">Tasks Processed</div>
+        <div style="font-size: 3.5rem; font-weight: 700; color: var(--text-main); line-height: 1;">{{ completed_tasks }}</div>
+    </div>
+</div>
+{% endblock %}

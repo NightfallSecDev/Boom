@@ -1,0 +1,451 @@
+2026-04-10 18:14:22,054 INFO     Starting server at tcp:port=8000:interface=127.0.0.1
+2026-04-10 18:14:22,054 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2026-04-10 18:14:22,055 INFO     Configuring endpoint tcp:port=8000:interface=127.0.0.1
+2026-04-10 18:14:22,056 INFO     Listening on TCP address 127.0.0.1:8000
+2026-04-10 18:14:35,831 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:58338 - - [10/Apr/2026:18:14:35] "GET /admin/" 200 27008
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:14:35,994 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:58338 - - [10/Apr/2026:18:14:36] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+2026-04-10 18:14:36,002 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:58346 - - [10/Apr/2026:18:14:36] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:14:36,032 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:58360 - - [10/Apr/2026:18:14:36] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:14:36,034 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:14:36,038 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:58350 - - [10/Apr/2026:18:14:36] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:14:36,044 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+127.0.0.1:58356 - - [10/Apr/2026:18:14:36] "GET /static/jazzmin/css/main.css" 404 5310
+127.0.0.1:58376 - - [10/Apr/2026:18:14:36] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:14:36,077 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:58338 - - [10/Apr/2026:18:14:36] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:14:36,100 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:14:36,101 WARNING  Not Found: /static/jazzmin/js/main.js
+127.0.0.1:58346 - - [10/Apr/2026:18:14:36] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+127.0.0.1:58360 - - [10/Apr/2026:18:14:36] "GET /static/jazzmin/js/main.js" 404 5304
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:14:36,325 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:58360 - - [10/Apr/2026:18:14:36] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+2026-04-10 18:14:43,727 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:14:43,748 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:14:43,754 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:14:43,777 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:58360 - - [10/Apr/2026:18:14:43] "GET /admin/clients/client/" 200 24327
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:14:43,921 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+127.0.0.1:58338 - - [10/Apr/2026:18:14:43] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:14:43,961 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+127.0.0.1:58360 - - [10/Apr/2026:18:14:43] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+2026-04-10 18:14:43,963 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:58346 - - [10/Apr/2026:18:14:43] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+Not Found: /static/vendor/select2/css/select2.min.css
+2026-04-10 18:14:43,978 WARNING  Not Found: /static/vendor/select2/css/select2.min.css
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:14:43,979 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:58356 - - [10/Apr/2026:18:14:43] "GET /static/vendor/select2/css/select2.min.css" 404 5352
+127.0.0.1:58376 - - [10/Apr/2026:18:14:43] "GET /static/jazzmin/css/main.css" 404 5310
+127.0.0.1:58350 - - [10/Apr/2026:18:14:44] "GET /admin/jsi18n/" 200 3342
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:14:44,035 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+127.0.0.1:58338 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+Not Found: /static/admin/js/jquery.init.js
+2026-04-10 18:14:44,080 WARNING  Not Found: /static/admin/js/jquery.init.js
+127.0.0.1:58360 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/jquery.init.js" 404 5319
+Not Found: /static/admin/js/core.js
+2026-04-10 18:14:44,092 WARNING  Not Found: /static/admin/js/core.js
+127.0.0.1:58346 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/core.js" 404 5298
+Not Found: /static/admin/js/actions.js
+2026-04-10 18:14:44,126 WARNING  Not Found: /static/admin/js/actions.js
+127.0.0.1:58356 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/actions.js" 404 5307
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+2026-04-10 18:14:44,127 WARNING  Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+127.0.0.1:58376 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/admin/RelatedObjectLookups.js" 404 5364
+Not Found: /static/admin/js/urlify.js
+2026-04-10 18:14:44,130 WARNING  Not Found: /static/admin/js/urlify.js
+127.0.0.1:58350 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/urlify.js" 404 5304
+Not Found: /static/admin/js/prepopulate.js
+2026-04-10 18:14:44,141 WARNING  Not Found: /static/admin/js/prepopulate.js
+127.0.0.1:58338 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/prepopulate.js" 404 5319
+Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+2026-04-10 18:14:44,165 WARNING  Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+127.0.0.1:58360 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/vendor/xregexp/xregexp.js" 404 5352
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:14:44,166 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:58346 - - [10/Apr/2026:18:14:44] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:14:44,171 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:58356 - - [10/Apr/2026:18:14:44] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:14:44,383 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:14:44,391 WARNING  Not Found: /static/jazzmin/js/main.js
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:14:44,391 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+Not Found: /static/jazzmin/js/change_list.js
+2026-04-10 18:14:44,391 WARNING  Not Found: /static/jazzmin/js/change_list.js
+127.0.0.1:58350 - - [10/Apr/2026:18:14:44] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+127.0.0.1:58346 - - [10/Apr/2026:18:14:44] "GET /static/jazzmin/js/main.js" 404 5304
+127.0.0.1:58356 - - [10/Apr/2026:18:14:44] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+127.0.0.1:58338 - - [10/Apr/2026:18:14:44] "GET /static/jazzmin/js/change_list.js" 404 5325
+Not Found: /static/vendor/select2/js/select2.min.js
+2026-04-10 18:14:44,401 WARNING  Not Found: /static/vendor/select2/js/select2.min.js
+127.0.0.1:58360 - - [10/Apr/2026:18:14:44] "GET /static/vendor/select2/js/select2.min.js" 404 5346
+2026-04-10 18:15:05,406 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:05,419 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:05,421 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:05,426 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:58360 - - [10/Apr/2026:18:15:05] "GET /admin/clients/client/" 200 24327
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:15:05,543 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+127.0.0.1:58360 - - [10/Apr/2026:18:15:05] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:15:05,579 WARNING  Not Found: /static/jazzmin/css/main.css
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+2026-04-10 18:15:05,579 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:58346 - - [10/Apr/2026:18:15:05] "GET /static/jazzmin/css/main.css" 404 5310
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:05,580 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+127.0.0.1:58356 - - [10/Apr/2026:18:15:05] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+127.0.0.1:58338 - - [10/Apr/2026:18:15:05] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+Not Found: /static/vendor/select2/css/select2.min.css
+2026-04-10 18:15:05,586 WARNING  Not Found: /static/vendor/select2/css/select2.min.css
+127.0.0.1:58350 - - [10/Apr/2026:18:15:05] "GET /static/vendor/select2/css/select2.min.css" 404 5352
+127.0.0.1:58376 - - [10/Apr/2026:18:15:05] "GET /admin/jsi18n/" 200 3342
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:05,660 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+127.0.0.1:58360 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+Not Found: /static/admin/js/jquery.init.js
+2026-04-10 18:15:05,677 WARNING  Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+2026-04-10 18:15:05,677 WARNING  Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/core.js
+127.0.0.1:58346 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/jquery.init.js" 404 5319
+2026-04-10 18:15:05,678 WARNING  Not Found: /static/admin/js/core.js
+127.0.0.1:58338 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/admin/RelatedObjectLookups.js" 404 5364
+127.0.0.1:58356 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/core.js" 404 5298
+Not Found: /static/admin/js/actions.js
+2026-04-10 18:15:05,687 WARNING  Not Found: /static/admin/js/actions.js
+127.0.0.1:58350 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/actions.js" 404 5307
+Not Found: /static/admin/js/urlify.js
+2026-04-10 18:15:05,721 WARNING  Not Found: /static/admin/js/urlify.js
+127.0.0.1:58376 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/urlify.js" 404 5304
+Not Found: /static/admin/js/prepopulate.js
+2026-04-10 18:15:05,758 WARNING  Not Found: /static/admin/js/prepopulate.js
+127.0.0.1:58360 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/prepopulate.js" 404 5319
+Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+2026-04-10 18:15:05,763 WARNING  Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:05,763 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:58346 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/vendor/xregexp/xregexp.js" 404 5352
+127.0.0.1:58356 - - [10/Apr/2026:18:15:05] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:15:05,769 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:58338 - - [10/Apr/2026:18:15:05] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/vendor/select2/js/select2.min.js
+2026-04-10 18:15:05,859 WARNING  Not Found: /static/vendor/select2/js/select2.min.js
+Not Found: /static/jazzmin/js/main.js
+127.0.0.1:58338 - - [10/Apr/2026:18:15:05] "GET /static/vendor/select2/js/select2.min.js" 404 5346
+2026-04-10 18:15:05,860 WARNING  Not Found: /static/jazzmin/js/main.js
+Not Found: /static/jazzmin/js/change_list.js
+2026-04-10 18:15:05,861 WARNING  Not Found: /static/jazzmin/js/change_list.js
+127.0.0.1:58346 - - [10/Apr/2026:18:15:05] "GET /static/jazzmin/js/main.js" 404 5304
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:05,861 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:15:05,861 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+127.0.0.1:58360 - - [10/Apr/2026:18:15:05] "GET /static/jazzmin/js/change_list.js" 404 5325
+127.0.0.1:58376 - - [10/Apr/2026:18:15:05] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+127.0.0.1:58356 - - [10/Apr/2026:18:15:05] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+2026-04-10 18:15:07,578 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:07,590 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:07,591 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:07,595 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:58360 - - [10/Apr/2026:18:15:07] "GET /admin/clients/client/" 200 24327
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:07,707 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:58376 - - [10/Apr/2026:18:15:07] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+2026-04-10 18:15:07,707 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+127.0.0.1:58356 - - [10/Apr/2026:18:15:07] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+2026-04-10 18:15:07,709 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:15:07,712 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:58360 - - [10/Apr/2026:18:15:07] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+127.0.0.1:58338 - - [10/Apr/2026:18:15:07] "GET /static/jazzmin/css/main.css" 404 5310
+Not Found: /static/vendor/select2/css/select2.min.css
+2026-04-10 18:15:07,726 WARNING  Not Found: /static/vendor/select2/css/select2.min.css
+127.0.0.1:58346 - - [10/Apr/2026:18:15:07] "GET /static/vendor/select2/css/select2.min.css" 404 5352
+127.0.0.1:58350 - - [10/Apr/2026:18:15:07] "GET /admin/jsi18n/" 200 3342
+Not Found: /static/admin/js/jquery.init.js
+2026-04-10 18:15:07,790 WARNING  Not Found: /static/admin/js/jquery.init.js
+127.0.0.1:58376 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/jquery.init.js" 404 5319
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:07,796 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+127.0.0.1:58356 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+2026-04-10 18:15:07,807 WARNING  Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/actions.js
+2026-04-10 18:15:07,807 WARNING  Not Found: /static/admin/js/actions.js
+127.0.0.1:58338 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/admin/RelatedObjectLookups.js" 404 5364
+127.0.0.1:58346 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/actions.js" 404 5307
+Not Found: /static/admin/js/core.js
+2026-04-10 18:15:07,812 WARNING  Not Found: /static/admin/js/core.js
+127.0.0.1:58360 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/core.js" 404 5298
+Not Found: /static/admin/js/urlify.js
+2026-04-10 18:15:07,825 WARNING  Not Found: /static/admin/js/urlify.js
+127.0.0.1:58350 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/urlify.js" 404 5304
+Not Found: /static/admin/js/prepopulate.js
+2026-04-10 18:15:07,872 WARNING  Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+2026-04-10 18:15:07,872 WARNING  Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+127.0.0.1:58376 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/prepopulate.js" 404 5319
+127.0.0.1:58356 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/vendor/xregexp/xregexp.js" 404 5352
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:07,875 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:58338 - - [10/Apr/2026:18:15:07] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:15:07,878 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:58346 - - [10/Apr/2026:18:15:07] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:07,975 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/jazzmin/js/main.js
+127.0.0.1:58350 - - [10/Apr/2026:18:15:07] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+2026-04-10 18:15:07,976 WARNING  Not Found: /static/jazzmin/js/main.js
+Not Found: /static/vendor/select2/js/select2.min.js
+2026-04-10 18:15:07,977 WARNING  Not Found: /static/vendor/select2/js/select2.min.js
+Not Found: /static/jazzmin/js/change_list.js
+2026-04-10 18:15:07,977 WARNING  Not Found: /static/jazzmin/js/change_list.js
+127.0.0.1:58338 - - [10/Apr/2026:18:15:07] "GET /static/jazzmin/js/main.js" 404 5304
+127.0.0.1:58356 - - [10/Apr/2026:18:15:07] "GET /static/vendor/select2/js/select2.min.js" 404 5346
+127.0.0.1:58376 - - [10/Apr/2026:18:15:07] "GET /static/jazzmin/js/change_list.js" 404 5325
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:15:07,987 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+127.0.0.1:58346 - - [10/Apr/2026:18:15:07] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+2026-04-10 18:15:10,758 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:10,780 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:10,789 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+2026-04-10 18:15:10,804 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:58376 - - [10/Apr/2026:18:15:10] "GET /admin/auth/user/" 200 24264
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:15:11,018 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+2026-04-10 18:15:11,021 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:58376 - - [10/Apr/2026:18:15:11] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+127.0.0.1:58356 - - [10/Apr/2026:18:15:11] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:11,024 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:15:11,024 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:58346 - - [10/Apr/2026:18:15:11] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+127.0.0.1:58338 - - [10/Apr/2026:18:15:11] "GET /static/jazzmin/css/main.css" 404 5310
+Not Found: /static/vendor/select2/css/select2.min.css
+2026-04-10 18:15:11,045 WARNING  Not Found: /static/vendor/select2/css/select2.min.css
+127.0.0.1:58350 - - [10/Apr/2026:18:15:11] "GET /static/vendor/select2/css/select2.min.css" 404 5352
+127.0.0.1:58360 - - [10/Apr/2026:18:15:11] "GET /admin/jsi18n/" 200 3342
+Not Found: /static/admin/js/jquery.init.js
+2026-04-10 18:15:11,128 WARNING  Not Found: /static/admin/js/jquery.init.js
+127.0.0.1:58356 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/jquery.init.js" 404 5319
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:11,150 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/admin/js/core.js
+2026-04-10 18:15:11,153 WARNING  Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+2026-04-10 18:15:11,158 WARNING  Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+127.0.0.1:58376 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+127.0.0.1:58346 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/core.js" 404 5298
+127.0.0.1:58338 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/admin/RelatedObjectLookups.js" 404 5364
+Not Found: /static/admin/js/urlify.js
+2026-04-10 18:15:11,185 WARNING  Not Found: /static/admin/js/urlify.js
+127.0.0.1:58360 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/urlify.js" 404 5304
+Not Found: /static/admin/js/actions.js
+2026-04-10 18:15:11,188 WARNING  Not Found: /static/admin/js/actions.js
+127.0.0.1:58350 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/actions.js" 404 5307
+Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+2026-04-10 18:15:11,238 WARNING  Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+Not Found: /static/admin/js/prepopulate.js
+2026-04-10 18:15:11,238 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:58376 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/vendor/xregexp/xregexp.js" 404 5352
+127.0.0.1:58346 - - [10/Apr/2026:18:15:11] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+2026-04-10 18:15:11,239 WARNING  Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/img/icon-yes.svg
+2026-04-10 18:15:11,240 WARNING  Not Found: /static/admin/img/icon-yes.svg
+127.0.0.1:58356 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/prepopulate.js" 404 5319
+127.0.0.1:58338 - - [10/Apr/2026:18:15:11] "GET /static/admin/img/icon-yes.svg" 404 5316
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:15:11,327 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+Not Found: /static/vendor/select2/js/select2.min.js
+2026-04-10 18:15:11,327 WARNING  Not Found: /static/vendor/select2/js/select2.min.js
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:11,328 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+Not Found: /static/jazzmin/js/change_list.js
+127.0.0.1:58346 - - [10/Apr/2026:18:15:11] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+2026-04-10 18:15:11,329 WARNING  Not Found: /static/jazzmin/js/change_list.js
+127.0.0.1:58350 - - [10/Apr/2026:18:15:11] "GET /static/vendor/select2/js/select2.min.js" 404 5346
+Not Found: /static/admin/img/icon-no.svg
+2026-04-10 18:15:11,329 WARNING  Not Found: /static/admin/img/icon-no.svg
+127.0.0.1:58338 - - [10/Apr/2026:18:15:11] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+127.0.0.1:58360 - - [10/Apr/2026:18:15:11] "GET /static/jazzmin/js/change_list.js" 404 5325
+127.0.0.1:58356 - - [10/Apr/2026:18:15:11] "GET /static/admin/img/icon-no.svg" 404 5313
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:15:11,343 WARNING  Not Found: /static/jazzmin/js/main.js
+127.0.0.1:58376 - - [10/Apr/2026:18:15:11] "GET /static/jazzmin/js/main.js" 404 5304
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:11,381 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+127.0.0.1:58346 - - [10/Apr/2026:18:15:11] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+2026-04-10 18:15:16,167 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:58346 - - [10/Apr/2026:18:15:16] "GET /admin/" 200 27008
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+2026-04-10 18:15:16,321 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:58360 - - [10/Apr/2026:18:15:16] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:16,324 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+127.0.0.1:58376 - - [10/Apr/2026:18:15:16] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:16,326 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:15:16,328 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+Not Found: /static/jazzmin/css/main.css
+127.0.0.1:58350 - - [10/Apr/2026:18:15:16] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+2026-04-10 18:15:16,329 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:58356 - - [10/Apr/2026:18:15:16] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:15:16,330 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+127.0.0.1:58338 - - [10/Apr/2026:18:15:16] "GET /static/jazzmin/css/main.css" 404 5310
+127.0.0.1:58346 - - [10/Apr/2026:18:15:16] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:16,396 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:58360 - - [10/Apr/2026:18:15:16] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:15:16,412 WARNING  Not Found: /static/jazzmin/js/main.js
+127.0.0.1:58350 - - [10/Apr/2026:18:15:16] "GET /static/jazzmin/js/main.js" 404 5304
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:15:16,415 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+127.0.0.1:58376 - - [10/Apr/2026:18:15:16] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+2026-04-10 18:15:43,324 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:50926 - - [10/Apr/2026:18:15:43] "GET /admin/" 200 27008
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:15:43,419 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+127.0.0.1:50926 - - [10/Apr/2026:18:15:43] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:15:43,458 WARNING  Not Found: /static/jazzmin/css/main.css
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:43,459 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:43,461 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+2026-04-10 18:15:43,462 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:50936 - - [10/Apr/2026:18:15:43] "GET /static/jazzmin/css/main.css" 404 5310
+127.0.0.1:50934 - - [10/Apr/2026:18:15:43] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+127.0.0.1:50962 - - [10/Apr/2026:18:15:43] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+127.0.0.1:50930 - - [10/Apr/2026:18:15:43] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:15:43,471 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:50946 - - [10/Apr/2026:18:15:43] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:43,480 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:50926 - - [10/Apr/2026:18:15:43] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:15:43,532 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:15:43,534 WARNING  Not Found: /static/jazzmin/js/main.js
+127.0.0.1:50934 - - [10/Apr/2026:18:15:43] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+127.0.0.1:50936 - - [10/Apr/2026:18:15:43] "GET /static/jazzmin/js/main.js" 404 5304
+2026-04-10 18:15:44,319 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:50936 - - [10/Apr/2026:18:15:44] "GET /admin/" 200 27008
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:44,462 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:50926 - - [10/Apr/2026:18:15:44] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+2026-04-10 18:15:44,464 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:15:44,464 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+127.0.0.1:50934 - - [10/Apr/2026:18:15:44] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:15:44,464 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/jazzmin/css/main.css
+127.0.0.1:50936 - - [10/Apr/2026:18:15:44] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+2026-04-10 18:15:44,464 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:44,465 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:50946 - - [10/Apr/2026:18:15:44] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+127.0.0.1:50930 - - [10/Apr/2026:18:15:44] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+127.0.0.1:50962 - - [10/Apr/2026:18:15:44] "GET /static/jazzmin/css/main.css" 404 5310
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:44,537 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+127.0.0.1:50934 - - [10/Apr/2026:18:15:44] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+2026-04-10 18:15:44,538 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:15:44,538 WARNING  Not Found: /static/jazzmin/js/main.js
+127.0.0.1:50926 - - [10/Apr/2026:18:15:44] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+127.0.0.1:50946 - - [10/Apr/2026:18:15:44] "GET /static/jazzmin/js/main.js" 404 5304
+2026-04-10 18:15:44,701 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:50946 - - [10/Apr/2026:18:15:44] "GET /admin/" 200 27008
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:15:44,791 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+127.0.0.1:50946 - - [10/Apr/2026:18:15:44] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:15:44,835 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:50930 - - [10/Apr/2026:18:15:44] "GET /static/jazzmin/css/main.css" 404 5310
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:44,836 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+2026-04-10 18:15:44,836 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:50936 - - [10/Apr/2026:18:15:44] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:44,837 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:15:44,837 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:50926 - - [10/Apr/2026:18:15:44] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+127.0.0.1:50934 - - [10/Apr/2026:18:15:44] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+127.0.0.1:50962 - - [10/Apr/2026:18:15:44] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:44,870 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:50946 - - [10/Apr/2026:18:15:44] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:15:44,901 WARNING  Not Found: /static/jazzmin/js/main.js
+127.0.0.1:50936 - - [10/Apr/2026:18:15:44] "GET /static/jazzmin/js/main.js" 404 5304
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:15:44,902 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+127.0.0.1:50930 - - [10/Apr/2026:18:15:44] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+2026-04-10 18:15:45,203 WARNING  JAZZMIN_UI_TWEAKS['dark_mode_theme'] is deprecated and ignored. Use default_theme_mode='auto' (or 'light'/'dark') instead. All themes now support light/dark via data-bs-theme.
+127.0.0.1:50930 - - [10/Apr/2026:18:15:45] "GET /admin/" 200 27008
+Not Found: /static/admin/js/vendor/jquery/jquery.js
+2026-04-10 18:15:45,368 WARNING  Not Found: /static/admin/js/vendor/jquery/jquery.js
+127.0.0.1:50926 - - [10/Apr/2026:18:15:45] "GET /static/admin/js/vendor/jquery/jquery.js" 404 5346
+Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+2026-04-10 18:15:45,369 WARNING  Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+127.0.0.1:50934 - - [10/Apr/2026:18:15:45] "GET /static/vendor/adminlte/img/AdminLTELogo.png" 404 5358
+Not Found: /static/vendor/fontawesome-free/css/all.min.css
+2026-04-10 18:15:45,377 WARNING  Not Found: /static/vendor/fontawesome-free/css/all.min.css
+Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+2026-04-10 18:15:45,378 WARNING  Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+127.0.0.1:50930 - - [10/Apr/2026:18:15:45] "GET /static/vendor/fontawesome-free/css/all.min.css" 404 5367
+127.0.0.1:50946 - - [10/Apr/2026:18:15:45] "GET /static/vendor/bootswatch/darkly/bootstrap.min.css" 404 5376
+Not Found: /static/jazzmin/css/main.css
+2026-04-10 18:15:45,385 WARNING  Not Found: /static/jazzmin/css/main.css
+127.0.0.1:50962 - - [10/Apr/2026:18:15:45] "GET /static/jazzmin/css/main.css" 404 5310
+Not Found: /static/vendor/adminlte/css/adminlte.min.css
+2026-04-10 18:15:45,398 WARNING  Not Found: /static/vendor/adminlte/css/adminlte.min.css
+127.0.0.1:50936 - - [10/Apr/2026:18:15:45] "GET /static/vendor/adminlte/css/adminlte.min.css" 404 5358
+Not Found: /static/vendor/adminlte/js/adminlte.min.js
+2026-04-10 18:15:45,472 WARNING  Not Found: /static/vendor/adminlte/js/adminlte.min.js
+Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+2026-04-10 18:15:45,473 WARNING  Not Found: /static/vendor/bootstrap/js/bootstrap.bundle.min.js
+127.0.0.1:50934 - - [10/Apr/2026:18:15:45] "GET /static/vendor/adminlte/js/adminlte.min.js" 404 5352
+127.0.0.1:50926 - - [10/Apr/2026:18:15:45] "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js" 404 5379
+Not Found: /static/jazzmin/js/main.js
+2026-04-10 18:15:45,488 WARNING  Not Found: /static/jazzmin/js/main.js
+127.0.0.1:50930 - - [10/Apr/2026:18:15:45] "GET /static/jazzmin/js/main.js" 404 5304

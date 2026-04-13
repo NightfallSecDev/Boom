@@ -1,0 +1,212 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<header>
+    <h1>Task Management</h1>
+</header><div class="grid grid-cols-2" style="margin-bottom: 2.5rem;">
+    <!-- LEFT: Task Creation Form -->
+    <div class="glass-card" style="animation-delay: 0.1s">
+        <h2 style="margin-bottom: 1.5rem; font-size: 1.25rem; font-weight: 600;">Deploy Instruction</h2>
+        <form method="POST" action="{% url 'tasks_page' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Target Agents (Hold CTRL/CMD to select multiple)</label>
+                <select name="client_ids" multiple required style="height: 120px; overflow-y: auto;">
+                    {% for client in clients %}
+                    <option value="{{ client.id }}" style="padding: 0.5rem;">{{ client.name }} {% if client.status == 'online' %}🟢{% else %}🔴{% endif %}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; color: #9ca3af; font-size: 0.85rem;">System Command</label>
+                <input type="text" name="command" placeholder="Enter bash/cmd instruction (e.g. netstat -ano)" style="width: 100%; padding: 0.75rem; border-radius: 6px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: var(--text);">
+            </div>
+            <button type="submit" class="btn">Deploy Job Batch</button>
+        </form>
+    </div>
+
+    <!-- RIGHT: Live Terminal Preview -->
+    <div class="glass-card" style="animation-delay: 0.2s; background: rgba(0,0,0,0.6); border-color: rgba(79, 70, 229, 0.3);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.1rem; font-weight: 600; color: #818cf8; margin: 0;">Live Terminal Preview</h2>
+            <div style="display: flex; gap: 6px;">
+                <span style="display:block; width: 10px; height: 10px; border-radius: 50%; background: #f43f5e;"></span>
+                <span style="display:block; width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span>
+                <span style="display:block; width: 10px; height: 10px; border-radius: 50%; background: #10b981;"></span>
+            </div>
+        </div>
+        <pre id="live-terminal-output" style="height: 250px; overflow-y: auto; background: #000; color: #10b981; border-radius: 6px; padding: 1rem; font-family: ui-monospace, Consolas, monospace; white-space: pre-wrap; font-size: 0.85rem; margin: 0; border: 1px solid rgba(255,255,255,0.05);"></pre>
+    </div>
+</div>
+
+<div class="glass-card" style="animation-delay: 0.3s; margin-bottom: 2.5rem;">
+    <h2 style="margin-bottom: 1.5rem; font-size: 1.25rem; font-weight: 600;">Job Batch Progression</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Batch Reference</th>
+                <th>Target Scope</th>
+                <th>Execution Progress</th>
+                <th>Date Assigned</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for b in batches %}
+            <tr>
+                <td style="font-weight: 600; font-family: monospace;">{{ b.batch.name }}</td>
+                <td>{{ b.total }} node(s) targeted</td>
+                <td style="width: 30%;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden;">
+                            <div style="height: 100%; width: {{ b.progress }}%; background: var(--success); transition: width 0.5s;"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">{{ b.progress }}%</span>
+                    </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 0.8rem;">{{ b.batch.created_at|date:"M d, Y h:i A" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 2rem;">No batches queued.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="glass-card" style="animation-delay: 0.4s">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin: 0;">Individual Sub-Task Executions</h2>
+        <input type="text" id="taskSearch" placeholder="Filter task history..." style="width: 250px; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(0,0,0,0.4); color: white;">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Batch</th>
+                <th>Agent</th>
+                <th>Instruction</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr class="task-row" data-task-id="{{ task.id }}" data-status="{{ task.status }}" style="cursor: pointer;" onclick="viewTerminal('{{ task.id }}', '{{ task.status }}')">
+                <td style="font-size: 0.8rem; color: var(--text-muted);">{{ task.batch.name|default:"Independent" }}</td>
+                <td style="font-weight: 600; font-size: 0.95rem;">{{ task.target_client.name }}</td>
+                <td><span style="font-family: ui-monospace, SFMono-Regular, Consolas, monospace; color: #818cf8; font-size: 0.85rem; padding: 0.4rem 0.8rem; background: rgba(0,0,0,0.4); border-radius: 6px; border: 1px solid var(--border-color);">{{ task.command }}</span></td>
+                <td>
+                    <span id="status-badge-{{ task.id }}">
+                        {% if task.status == 'pending' %}
+                        <span class="badge badge-pending">Queued</span>
+                        {% elif task.status == 'completed' %}
+                        <span class="badge badge-online">Executed</span>
+                        {% else %}
+                        <span class="badge badge-online" style="background: rgba(79,70,229,0.1); color: var(--primary); border-color: rgba(79,70,229,0.2);">{{ task.status|title }}</span>
+                        {% endif %}
+                    </span>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 3rem;">No deployment history detected.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    let activeTaskId = null;
+    let pollInterval = null;
+
+    function updateBadge(taskId, newStatus) {
+        const badgeContainer = document.getElementById('status-badge-' + taskId);
+        if (!badgeContainer) return;
+        
+        let badgeHtml = '';
+        if (newStatus === 'pending') {
+            badgeHtml = '<span class="badge badge-pending">Queued</span>';
+        } else if (newStatus === 'completed') {
+            badgeHtml = '<span class="badge badge-online">Executed</span>';
+        } else {
+            badgeHtml = '<span class="badge badge-online" style="background: rgba(79,70,229,0.1); color: var(--primary); border-color: rgba(79,70,229,0.2);">' + newStatus.charAt(0).toUpperCase() + newStatus.slice(1) + '</span>';
+        }
+        badgeContainer.innerHTML = badgeHtml;
+        
+        const row = document.querySelector(`.task-row[data-task-id="${taskId}"]`);
+        if (row) row.dataset.status = newStatus;
+    }
+
+    function viewTerminal(taskId, initialStatus) {
+        activeTaskId = taskId;
+        const terminalContainer = document.getElementById('live-terminal-output');
+        terminalContainer.textContent = '>> Routing output stream request for Task [' + taskId + ']...\r\n';
+        
+        // Fetch historic static execution outputs
+        fetch('/api/task/' + taskId + '/')
+            .then(res => res.json())
+            .then(data => {
+                if (data.output) terminalContainer.textContent += data.output.replace(/\n/g, '\r\n');
+                if (data.error)  terminalContainer.textContent += '\r\n' + data.error.replace(/\n/g, '\r\n');
+                terminalContainer.scrollTop = terminalContainer.scrollHeight;
+                
+                // If task is still pending or assigned, bind the WebSockets over it
+                if (data.status !== 'completed' && data.status !== 'failed') {
+                    const socket = new WebSocket('ws://' + window.location.host + '/ws/terminal/' + taskId + '/');
+                    socket.onopen = () => {
+                        terminalContainer.textContent += '\r\n>> Connected Live WebSocket. Awaiting Agent execution chunks...\r\n';
+                        terminalContainer.scrollTop = terminalContainer.scrollHeight;
+                    };
+                    socket.onmessage = (event) => {
+                        const evt = JSON.parse(event.data);
+                        if (evt.output) {
+                            terminalContainer.textContent += evt.output;
+                            terminalContainer.scrollTop = terminalContainer.scrollHeight;
+                        }
+                    };
+                    socket.onerror = (error) => { 
+                        terminalContainer.textContent += '\r\n>> [ERROR] WebSocket connection failed.\r\n'; 
+                        terminalContainer.scrollTop = terminalContainer.scrollHeight;
+                    };
+                    socket.onclose = () => { 
+                        terminalContainer.textContent += '\r\n>> Viewport logic stream gracefully closed.\r\n'; 
+                        terminalContainer.scrollTop = terminalContainer.scrollHeight;
+                    };
+                } else {
+                    terminalContainer.textContent += '\r\n>> Disconnected (Task Finalized historically).\r\n';
+                    terminalContainer.scrollTop = terminalContainer.scrollHeight;
+                }
+            })
+            .catch(err => {
+                terminalContainer.textContent += '\r\n>> [ERROR] Failed to query API pipeline for historical logs.\r\n';
+            });
+            
+        updateBadge(taskId, 'stream-active');
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const activeTasks = document.querySelectorAll('.task-row[data-status="pending"], .task-row[data-status="assigned"]');
+        if (activeTasks.length > 0) {
+            const firstActive = activeTasks[0];
+            viewTerminal(firstActive.dataset.taskId, firstActive.dataset.status);
+        }
+    });
+
+    // We can also poll to refresh the entire page to update progress bars every 10s if we want:
+    setInterval(() => {
+        const hasPending = document.querySelectorAll('.badge-pending').length > 0;
+        if (hasPending) {
+            // Uncomment to force full refresh
+            // window.location.reload(); 
+        }
+    }, 10000);
+    
+    // Filter task history dynamically
+    const taskSearch = document.getElementById('taskSearch');
+    if (taskSearch) {
+        taskSearch.addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll('.task-row');
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase();
+                row.style.display = text.includes(filter) ? '' : 'none';
+            });
+        });
+    }
+</script>
+{% endblock %}

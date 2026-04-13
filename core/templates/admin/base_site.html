@@ -1,0 +1,216 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Loom Administrator | {{ title }}{% endblock %}
+
+{% block extrastyle %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* 
+===========================================
+LOOM C2 ULTIMATE DEEP-NODE CSS INJECTION
+===========================================
+*/
+:root {
+    --bg-universe: #09090b;
+    --bg-glass: rgba(24, 24, 27, 0.7);
+    --bg-card: #18181b;
+    --bg-input: #27272a;
+    --accent-glow: #6366f1;
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --neon-border: rgba(99, 102, 241, 0.3);
+    --text-pure: #ffffff;
+    --text-subtle: #a1a1aa;
+}
+
+body {
+    background-color: var(--bg-universe);
+    color: var(--text-pure);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.05), transparent 25%);
+}
+
+#theme-toggle, .theme-toggle { display: none !important; }
+
+/* HEADER & BRANDING */
+#header {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--neon-border);
+    padding: 20px 30px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+}
+
+#branding h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+}
+
+#branding a:link, #branding a:visited { color: var(--text-pure) !important; }
+
+#header a:link, #header a:visited {
+    color: var(--text-subtle);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+#header a:hover { color: var(--text-pure); }
+
+/* BREADCRUMBS */
+div.breadcrumbs {
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 40px;
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    font-weight: 500;
+}
+div.breadcrumbs a { color: #818cf8; text-decoration: none; }
+div.breadcrumbs a:hover { color: #c084fc; }
+
+/* MAIN CONTENT BLOCKS */
+.module {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.module h2 {
+    background: rgba(255,255,255,0.02);
+    color: #c084fc;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+div.form-row {
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    padding: 20px;
+}
+form .aligned label {
+    color: var(--text-subtle);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* INPUTS */
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], select, textarea {
+    background: var(--bg-input) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 8px !important;
+    color: var(--text-pure) !important;
+    padding: 10px 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+input[type=text]:focus, input[type=password]:focus, select:focus, textarea:focus {
+    outline: none !important;
+    border-color: #818cf8 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* BUTTONS */
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: var(--bg-input);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: var(--text-pure);
+    padding: 10px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background: var(--accent-gradient);
+    border: none;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.button:hover, input[type=submit]:hover {
+    background: rgba(255,255,255,0.1);
+}
+.button.default:hover, input[type=submit].default:hover {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+    transform: translateY(-1px);
+}
+
+/* TABLES (Changelists) */
+#changelist {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+#changelist table thead th {
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+#changelist table tbody td, #changelist table tbody th {
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    padding: 12px 20px;
+    color: var(--text-pure);
+}
+tr.row1 { background: transparent; }
+tr.row2 { background: rgba(255,255,255,0.02); }
+tr.row1:hover, tr.row2:hover { background: rgba(99, 102, 241, 0.05); }
+
+/* FILTERS */
+#changelist-filter {
+    background: var(--bg-card);
+    border-left: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0 12px 12px 0;
+}
+#changelist-filter h2 {
+    background: transparent;
+    color: #c084fc;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9rem;
+}
+#changelist-filter a { display: block; padding: 5px 0; color: var(--text-subtle); transition: color 0.2s;}
+#changelist-filter a:hover { color: #818cf8; }
+
+.paginator {
+    background: transparent;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    color: var(--text-subtle);
+}
+
+a:link, a:visited { color: #818cf8; text-decoration: none; transition: color 0.2s;}
+a:hover { color: #c084fc; }
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <span style="font-weight: 300; color: var(--text-subtle);">Loom //</span> 
+    <a href="{% url 'admin:index' %}">Command Center Admin</a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}
+<a href="/clients/" style="margin-right: 20px; background: rgba(99, 102, 241, 0.1); color: #818cf8 !important; padding: 8px 16px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.3); font-size: 0.85rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; transition: all 0.2s;">🡠 Exit to Tactical Dashboard</a>
+{% endblock %}
